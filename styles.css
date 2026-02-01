@@ -1,442 +1,419 @@
-/* إعادة الضبط والإعدادات العامة */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --facebook-blue: #1877f2;
-    --facebook-green: #42b72a;
-    --facebook-gray-bg: #f0f2f5;
-    --facebook-white: #ffffff;
-    --facebook-text: #1c1e21;
-    --facebook-text-secondary: #8a8d91;
-    --facebook-border: #dddfe2;
-    --facebook-blue-dark: #166fe5;
-    --facebook-green-dark: #36a420;
-}
-
-body {
-    font-family: 'Noto Sans Arabic', Helvetica, Arial, sans-serif;
-    background-color: var(--facebook-gray-bg);
-    color: var(--facebook-text);
-    line-height: 1.34;
-    direction: rtl;
-    font-size: 12px;
-}
-
-.container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+/* إضافة هذه الأنماط إلى ملف styles.css السابق */
 
 /* شريط التنقل */
-.navbar {
-    background-color: var(--facebook-white);
-    height: 56px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.admin-section {
+    margin-right: auto;
 }
 
-.nav-container {
-    max-width: 980px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-}
-
-.logo-section {
-    display: flex;
-    align-items: center;
-}
-
-.fb-logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--facebook-blue);
-    letter-spacing: -0.5px;
-    cursor: pointer;
-}
-
-/* المحتوى الرئيسي */
-.main-content {
-    flex: 1;
-    padding: 72px 0 24px;
-}
-
-.content-container {
-    max-width: 980px;
-    margin: 0 auto;
-    display: flex;
-    padding: 0 16px;
-    gap: 20px;
-}
-
-@media (max-width: 900px) {
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* القسم الأيسر */
-.left-section {
-    flex: 1;
-    max-width: 396px;
-}
-
-.welcome-text {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 24px;
-    color: var(--facebook-text);
-    text-align: right;
-    padding-right: 8px;
-}
-
-.login-box {
-    background-color: var(--facebook-white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    margin-bottom: 28px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.form-group {
-    margin-bottom: 12px;
-}
-
-.form-input {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 17px;
-    border: 1px solid var(--facebook-border);
+.admin-btn {
+    background-color: #f0f2f5;
+    border: 1px solid #ccd0d5;
     border-radius: 6px;
-    background-color: var(--facebook-white);
-    font-family: inherit;
-    line-height: 16px;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: var(--facebook-blue);
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
-}
-
-.form-input::placeholder {
-    color: var(--facebook-text-secondary);
-    font-size: 16px;
-}
-
-.login-btn {
-    background-color: var(--facebook-blue);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    font-family: inherit;
-    margin-top: 6px;
-}
-
-.login-btn:hover {
-    background-color: var(--facebook-blue-dark);
-}
-
-.forgot-password {
-    text-align: center;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--facebook-border);
-}
-
-.forgot-password a {
-    color: var(--facebook-blue);
-    text-decoration: none;
+    padding: 8px 16px;
+    color: #1c1e21;
     font-size: 14px;
-    font-weight: 500;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
-}
-
-.divider {
-    height: 1px;
-    background-color: var(--facebook-border);
-    margin: 20px 0;
-}
-
-.create-account-btn {
-    background-color: var(--facebook-green);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 14px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    font-family: inherit;
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-}
-
-.create-account-btn:hover {
-    background-color: var(--facebook-green-dark);
-}
-
-/* قسم التطبيق */
-.app-section {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid var(--facebook-border);
-}
-
-.app-text {
-    color: var(--facebook-text);
-    font-size: 14px;
-    margin-bottom: 16px;
-    line-height: 1.5;
-}
-
-.get-app-btn {
-    background-color: transparent;
-    border: 1px solid var(--facebook-border);
-    border-radius: 6px;
-    padding: 10px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--facebook-text);
-    cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
-    font-family: inherit;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
-.get-app-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.admin-btn:hover {
+    background-color: #e4e6eb;
 }
 
-.get-app-btn i {
-    font-size: 18px;
-    color: #3DDC84;
-}
-
-/* القسم الأيمن */
-.right-section {
-    flex: 1;
-    max-width: 500px;
-}
-
-.info-card {
-    background-color: var(--facebook-white);
-    padding: 20px;
+/* معلومات المستخدمين */
+.users-info {
+    background-color: white;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.info-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: var(--facebook-text);
-    text-align: right;
-}
-
-.info-links {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: flex-end;
-}
-
-.info-links li {
-    margin-bottom: 8px;
-}
-
-.info-links a {
-    color: var(--facebook-blue);
-    text-decoration: none;
-    font-size: 13px;
-    white-space: nowrap;
-}
-
-.info-links a:hover {
-    text-decoration: underline;
-}
-
-/* الفوتر */
-.footer {
-    background-color: var(--facebook-white);
-    padding: 20px 0;
-    border-top: 1px solid var(--facebook-border);
-    margin-top: auto;
-}
-
-.footer-content {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.language-selector {
-    margin-bottom: 16px;
-}
-
-.lang-select {
-    padding: 8px 12px;
-    border: 1px solid var(--facebook-border);
-    border-radius: 6px;
-    background-color: var(--facebook-white);
-    color: var(--facebook-text);
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 12px;
-}
-
-.footer-links a {
-    color: var(--facebook-text-secondary);
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    color: var(--facebook-text-secondary);
-    font-size: 11px;
-    margin-top: 8px;
-}
-
-/* رسائل التنبيه */
-#messageContainer {
-    position: fixed;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-.message {
-    background-color: var(--facebook-white);
-    padding: 12px 20px;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.info-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
-    animation: slideDown 0.3s ease-out;
-    border-right: 4px solid var(--facebook-blue);
-    min-width: 300px;
-    max-width: 90vw;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4e6eb;
 }
 
-@keyframes slideDown {
+.info-header i {
+    color: #1877f2;
+    font-size: 20px;
+}
+
+.info-header h3 {
+    font-size: 16px;
+    color: #1c1e21;
+}
+
+#usersCount {
+    background-color: #1877f2;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.users-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.2s;
+}
+
+.user-item:hover {
+    background-color: #f8f9fa;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1877f2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-email {
+    font-weight: 500;
+    color: #1c1e21;
+    font-size: 14px;
+}
+
+.user-date {
+    font-size: 12px;
+    color: #8a8d91;
+}
+
+.delete-user {
+    background: none;
+    border: none;
+    color: #f02849;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.delete-user:hover {
+    background-color: #ffe6e9;
+}
+
+/* لوحة تحكم المدير */
+.admin-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    display: none;
+}
+
+.admin-panel.active {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
     from {
-        transform: translateX(-50%) translateY(-20px);
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #1877f2;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.panel-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-panel:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.panel-content {
+    padding: 15px;
+}
+
+.panel-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.panel-section:last-child {
+    border-bottom: none;
+}
+
+.panel-section h4 {
+    color: #1c1e21;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-item {
+    background-color: #f0f2f5;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #8a8d91;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #1c1e21;
+    font-size: 16px;
+}
+
+.panel-btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #f0f2f5;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    color: #1c1e21;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.panel-btn:hover {
+    background-color: #e4e6eb;
+}
+
+.panel-btn i {
+    font-size: 16px;
+}
+
+#clearBtn {
+    color: #f02849;
+    border-color: #f02849;
+}
+
+#clearBtn:hover {
+    background-color: #ffe6e9;
+}
+
+.activity-log {
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.activity-item {
+    padding: 5px;
+    border-bottom: 1px solid #e4e6eb;
+    color: #65676b;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/* النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: scale(0.9);
         opacity: 0;
     }
     to {
-        transform: translateX(-50%) translateY(0);
+        transform: scale(1);
         opacity: 1;
     }
 }
 
-.message.success {
-    border-right-color: var(--facebook-green);
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #1877f2;
+    color: white;
+    border-radius: 8px 8px 0 0;
 }
 
-.message.error {
-    border-right-color: #f02849;
+.modal-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.message i {
-    font-size: 18px;
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
 }
 
-.message.success i {
-    color: var(--facebook-green);
+.close-modal:hover {
+    background-color: rgba(255,255,255,0.2);
 }
 
-.message.error i {
-    color: #f02849;
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1c1e21;
+    font-weight: 500;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal-btn:hover {
+    background-color: #36a420;
+}
+
+/* معلومات التخزين في الفوتر */
+#storageInfo {
+    background-color: #f0f2f5;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #65676b;
 }
 
 /* تحسينات للهواتف */
 @media (max-width: 768px) {
-    .main-content {
-        padding: 40px 0 20px;
+    .admin-section {
+        display: none;
     }
     
-    .content-container {
-        padding: 0 10px;
+    .users-info {
+        display: none;
     }
     
-    .left-section, .right-section {
-        max-width: 100%;
+    .admin-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
         width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+        z-index: 1001;
     }
     
-    .create-account-btn {
-        width: 80%;
-    }
-    
-    .footer-links {
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .login-box {
-        padding: 16px;
-    }
-    
-    .form-input {
-        padding: 12px;
-        font-size: 16px;
-    }
-    
-    .login-btn {
-        font-size: 18px;
-        padding: 12px;
-    }
-    
-    .create-account-btn {
-        font-size: 16px;
-        padding: 12px;
-    }
-    
-    .fb-logo {
-        font-size: 24px;
+    .stats {
+        grid-template-columns: 1fr;
     }
 }
