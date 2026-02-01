@@ -1,4 +1,4 @@
-/* أساسيات الصفحة */
+/* إعادة الضبط والإعدادات العامة */
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +6,24 @@
 }
 
 :root {
-    --fb-blue: #1877f2;
-    --fb-blue-hover: #166fe5;
-    --fb-green: #42b72a;
-    --fb-green-hover: #36a420;
-    --fb-bg: #f0f2f5;
-    --fb-white: #ffffff;
-    --fb-text: #1c1e21;
-    --fb-text-secondary: #8a8d91;
-    --fb-border: #dddfe2;
-    --fb-error: #f02849;
-    --fb-success: #42b72a;
-    --fb-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    --fb-radius: 8px;
-    --fb-radius-sm: 6px;
+    --facebook-blue: #1877f2;
+    --facebook-green: #42b72a;
+    --facebook-gray-bg: #f0f2f5;
+    --facebook-white: #ffffff;
+    --facebook-text: #1c1e21;
+    --facebook-text-secondary: #8a8d91;
+    --facebook-border: #dddfe2;
+    --facebook-blue-dark: #166fe5;
+    --facebook-green-dark: #36a420;
 }
 
 body {
-    font-family: 'Noto Sans Arabic', 'Segoe UI', Helvetica, Arial, sans-serif;
-    background-color: var(--fb-bg);
-    color: var(--fb-text);
+    font-family: 'Noto Sans Arabic', Helvetica, Arial, sans-serif;
+    background-color: var(--facebook-gray-bg);
+    color: var(--facebook-text);
     line-height: 1.34;
     direction: rtl;
+    font-size: 12px;
 }
 
 .container {
@@ -36,104 +32,79 @@ body {
     flex-direction: column;
 }
 
-.content-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 72px 0;
-    flex: 1;
+/* شريط التنقل */
+.navbar {
+    background-color: var(--facebook-white);
+    height: 56px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
     max-width: 980px;
     margin: 0 auto;
-    gap: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.fb-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--facebook-blue);
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    padding: 72px 0 24px;
+}
+
+.content-container {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 16px;
+    gap: 20px;
 }
 
 @media (max-width: 900px) {
-    .content-wrapper {
+    .content-container {
         flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        gap: 40px;
+        align-items: center;
     }
 }
 
+/* القسم الأيسر */
 .left-section {
     flex: 1;
-    padding-right: 32px;
+    max-width: 396px;
 }
 
-.brand-section {
-    margin-bottom: 20px;
-}
-
-.logo-large {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.logo-large i {
-    font-size: 3.5rem;
-    color: var(--fb-blue);
-    margin-left: 12px;
-}
-
-.logo-large h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--fb-blue);
-    letter-spacing: -0.5px;
-}
-
-.tagline {
-    font-size: 28px;
-    line-height: 1.3;
-    color: var(--fb-text);
-    max-width: 500px;
-}
-
-.features {
-    margin-top: 40px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: var(--fb-text);
-}
-
-.feature i {
-    color: var(--fb-blue);
-    margin-left: 12px;
+.welcome-text {
     font-size: 20px;
-    width: 24px;
-}
-
-@media (max-width: 900px) {
-    .left-section {
-        padding-right: 0;
-        padding-bottom: 20px;
-    }
-    
-    .logo-large {
-        justify-content: center;
-    }
-    
-    .feature {
-        justify-content: center;
-    }
-}
-
-.right-section {
-    width: 396px;
+    font-weight: normal;
+    margin-bottom: 24px;
+    color: var(--facebook-text);
+    text-align: right;
+    padding-right: 8px;
 }
 
 .login-box {
-    background-color: var(--fb-white);
+    background-color: var(--facebook-white);
     padding: 20px;
-    border-radius: var(--fb-radius);
-    box-shadow: var(--fb-shadow);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     margin-bottom: 28px;
 }
 
@@ -143,233 +114,254 @@ body {
     gap: 12px;
 }
 
-.fb-input {
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-input {
     width: 100%;
     padding: 14px 16px;
     font-size: 17px;
-    border: 1px solid var(--fb-border);
-    border-radius: var(--fb-radius-sm);
-    background-color: var(--fb-white);
-    transition: border-color 0.2s;
+    border: 1px solid var(--facebook-border);
+    border-radius: 6px;
+    background-color: var(--facebook-white);
     font-family: inherit;
+    line-height: 16px;
 }
 
-.fb-input:focus {
+.form-input:focus {
     outline: none;
-    border-color: var(--fb-blue);
+    border-color: var(--facebook-blue);
     box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
 }
 
-.fb-input::placeholder {
-    color: var(--fb-text-secondary);
-}
-
-.password-wrapper {
-    position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--fb-text-secondary);
-    cursor: pointer;
+.form-input::placeholder {
+    color: var(--facebook-text-secondary);
     font-size: 16px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
 }
 
-.toggle-password:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.fb-login-btn {
-    background-color: var(--fb-blue);
+.login-btn {
+    background-color: var(--facebook-blue);
     color: white;
     border: none;
-    border-radius: var(--fb-radius-sm);
+    border-radius: 6px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: bold;
     padding: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin-top: 6px;
     font-family: inherit;
+    margin-top: 6px;
 }
 
-.fb-login-btn:hover {
-    background-color: var(--fb-blue-hover);
-}
-
-.fb-login-btn:active {
-    transform: scale(0.99);
-}
-
-.forgot-password-link {
-    text-align: center;
-    margin: 16px 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--fb-border);
+.login-btn:hover {
+    background-color: var(--facebook-blue-dark);
 }
 
 .forgot-password {
-    color: var(--fb-blue);
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--facebook-border);
+}
+
+.forgot-password a {
+    color: var(--facebook-blue);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
 }
 
-.forgot-password:hover {
+.forgot-password a:hover {
     text-decoration: underline;
 }
 
-.separator {
+.divider {
     height: 1px;
-    background-color: var(--fb-border);
+    background-color: var(--facebook-border);
     margin: 20px 0;
-    position: relative;
 }
 
-.separator::after {
-    content: "أو";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--fb-white);
-    color: var(--fb-text-secondary);
-    padding: 0 16px;
-    font-size: 14px;
-}
-
-.fb-create-account-btn {
-    background-color: var(--fb-green);
+.create-account-btn {
+    background-color: var(--facebook-green);
     color: white;
     border: none;
-    border-radius: var(--fb-radius-sm);
+    border-radius: 6px;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: bold;
     padding: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin: 0 auto;
-    display: block;
-    width: 60%;
     font-family: inherit;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
 }
 
-.fb-create-account-btn:hover {
-    background-color: var(--fb-green-hover);
+.create-account-btn:hover {
+    background-color: var(--facebook-green-dark);
 }
 
-.official-page-link {
+/* قسم التطبيق */
+.app-section {
     text-align: center;
-    margin-top: 28px;
     padding-top: 20px;
-    border-top: 1px solid var(--fb-border);
+    border-top: 1px solid var(--facebook-border);
 }
 
-.page-link {
-    color: var(--fb-text);
-    text-decoration: none;
+.app-text {
+    color: var(--facebook-text);
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 
-.page-link:hover {
+.get-app-btn {
+    background-color: transparent;
+    border: 1px solid var(--facebook-border);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--facebook-text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.get-app-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.get-app-btn i {
+    font-size: 18px;
+    color: #3DDC84;
+}
+
+/* القسم الأيمن */
+.right-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.info-card {
+    background-color: var(--facebook-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.info-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--facebook-text);
+    text-align: right;
+}
+
+.info-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.info-links li {
+    margin-bottom: 8px;
+}
+
+.info-links a {
+    color: var(--facebook-blue);
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.info-links a:hover {
     text-decoration: underline;
 }
 
-.page-link i {
-    color: #f7b928;
-}
-
+/* الفوتر */
 .footer {
-    background-color: var(--fb-white);
+    background-color: var(--facebook-white);
     padding: 20px 0;
-    border-top: 1px solid var(--fb-border);
+    border-top: 1px solid var(--facebook-border);
     margin-top: auto;
 }
 
 .footer-content {
     max-width: 980px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
 }
 
 .language-selector {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 8px 12px;
-    border: 1px solid var(--fb-border);
-    border-radius: var(--fb-radius-sm);
     margin-bottom: 16px;
-    font-size: 14px;
-    color: var(--fb-text-secondary);
+}
+
+.lang-select {
+    padding: 8px 12px;
+    border: 1px solid var(--facebook-border);
+    border-radius: 6px;
+    background-color: var(--facebook-white);
+    color: var(--facebook-text);
+    font-size: 13px;
+    font-family: inherit;
     cursor: pointer;
 }
 
-.language-selector:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.links-row {
+.footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 16px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.links-row a {
-    color: var(--fb-text-secondary);
+.footer-links a {
+    color: var(--facebook-text-secondary);
     text-decoration: none;
+    white-space: nowrap;
 }
 
-.links-row a:hover {
+.footer-links a:hover {
     text-decoration: underline;
 }
 
-.meta-info {
-    color: var(--fb-text-secondary);
-    font-size: 12px;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--fb-border);
+.copyright {
+    color: var(--facebook-text-secondary);
+    font-size: 11px;
+    margin-top: 8px;
 }
 
-.alert {
+/* رسائل التنبيه */
+#messageContainer {
     position: fixed;
-    top: 20px;
+    top: 70px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 16px 24px;
-    border-radius: var(--fb-radius);
-    color: white;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 90%;
-    animation: slideIn 0.3s ease-out;
-    font-family: inherit;
 }
 
-@keyframes slideIn {
+.message {
+    background-color: var(--facebook-white);
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    animation: slideDown 0.3s ease-out;
+    border-right: 4px solid var(--facebook-blue);
+    min-width: 300px;
+    max-width: 90vw;
+}
+
+@keyframes slideDown {
     from {
         transform: translateX(-50%) translateY(-20px);
         opacity: 0;
@@ -380,76 +372,71 @@ body {
     }
 }
 
-.alert-error {
-    background-color: var(--fb-error);
-    border-left: 4px solid #cc1f3d;
+.message.success {
+    border-right-color: var(--facebook-green);
 }
 
-.alert-success {
-    background-color: var(--fb-success);
-    border-left: 4px solid #36a420;
+.message.error {
+    border-right-color: #f02849;
 }
 
-.alert-close {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
+.message i {
     font-size: 18px;
-    margin-right: auto;
-    opacity: 0.8;
 }
 
-.alert-close:hover {
-    opacity: 1;
+.message.success i {
+    color: var(--facebook-green);
 }
 
+.message.error i {
+    color: #f02849;
+}
+
+/* تحسينات للهواتف */
 @media (max-width: 768px) {
-    .content-wrapper {
-        padding: 40px 20px;
+    .main-content {
+        padding: 40px 0 20px;
     }
     
-    .logo-large h1 {
-        font-size: 2.5rem;
+    .content-container {
+        padding: 0 10px;
     }
     
-    .tagline {
-        font-size: 22px;
-    }
-    
-    .right-section {
+    .left-section, .right-section {
+        max-width: 100%;
         width: 100%;
-        max-width: 396px;
     }
     
-    .links-row {
-        gap: 12px;
+    .create-account-btn {
+        width: 80%;
+    }
+    
+    .footer-links {
+        gap: 8px;
     }
 }
 
 @media (max-width: 480px) {
-    .logo-large {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .logo-large h1 {
-        font-size: 2rem;
-    }
-    
-    .tagline {
-        font-size: 18px;
-    }
-    
-    .feature {
-        font-size: 16px;
-    }
-    
     .login-box {
         padding: 16px;
     }
     
-    .fb-create-account-btn {
-        width: 80%;
+    .form-input {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .login-btn {
+        font-size: 18px;
+        padding: 12px;
+    }
+    
+    .create-account-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .fb-logo {
+        font-size: 24px;
     }
 }
